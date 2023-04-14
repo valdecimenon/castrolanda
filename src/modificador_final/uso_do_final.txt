@@ -1,0 +1,6 @@
+Podemos usar final em 4 locais diferentes da classe
+
+1. no início do nome da classe
+2. no método da classe
+3. em variáveis da classe
+4. em parâmetros de métodos 

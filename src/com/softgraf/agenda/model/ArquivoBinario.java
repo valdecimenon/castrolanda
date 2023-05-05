@@ -3,6 +3,7 @@ package com.softgraf.agenda.model;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Arrays;
+import java.util.Date;
 
 // Gravação de dados binários
 //
@@ -21,10 +22,33 @@ import java.util.Arrays;
  * 1 João da Silva 42 3224-0123 2 Maria 42 3224-0000
  * 
  */
+
+/**
+ * <strong>Para ver o projeto completo acesse:</strong>
+ * <a href="https://github.com/valdecimenon/castrolanda">Github Castrolanda</a>
+ * 
+ * @author Valdeci Menon
+ * @version 1.0
+ * @since 04-05-2023
+ * 
+ */
 public class ArquivoBinario {
 
 	// arquivo binário de acesso aleatório
 	private RandomAccessFile arquivo;
+	
+	
+	/**
+	 * <p>Método responsável por abrir ou criar um arquivo binário de dados</p>
+	 * @param nome É o arquivo a ser aberto ou criado.
+	 * @see
+	 * 		<a href="https://docs.oracle.com/javase/tutorial/java/javaOO/returnvalue.html">
+	 * 			Retornando um valor de um método
+	 * 	    </a>
+	 * @since 1.0     
+	 * @throws IOException Se não for possível abrir ou criar arquivo
+	 *
+	 */
 	
 	// método para abrir ou criar arquivo de dados. Ex: agenda.dat
 	public void abrirArquivo(String nome) throws IOException {
@@ -33,6 +57,12 @@ public class ArquivoBinario {
 		arquivo.seek(arquivo.length());
 	}
 	
+	
+	/**
+	 * Fecha o arquivo
+	 * @throws IOException Se não for possível fechar arquivo
+	 */
+	
 	// fecha o arquivo de dados
 	public void fecharArquivo() throws IOException {
 		if (arquivo != null) {
@@ -40,6 +70,22 @@ public class ArquivoBinario {
 			arquivo = null;
 		}
 	}
+	
+	
+	
+	/**
+	 * @deprecated talvez seja removido a partir da versão 2.0, use metodoNovo() ao invés desse
+	 */
+	public void metodoDepreciado() {
+		
+	}
+	
+	/**
+	 * 
+	 * @param contato É um objeto da classe Contato
+	 * @see com.softgraf.agenda.model.Contato
+	 * @throws IOException Se arquivo ainda não foi aberto
+	 */
 	
 	// adiciona registro no final do arquivo
 	public void gravarContato(Contato contato) throws IOException {
@@ -70,6 +116,13 @@ public class ArquivoBinario {
 		
 		return sb.toString();
 	}
+	
+	/**
+	 * 
+	 * @param numero É a posição do registro no arquivo: valor entre 1 e n
+	 * @return Contato ou null
+	 * @throws IOException Se o arquivo ainda não foi aberto
+	 */
 	
 	// le um Contato, dado o número do registro
 	// numero = 1..n
@@ -110,6 +163,11 @@ public class ArquivoBinario {
 		
 		return contato;
 	}
+	
+	/**
+	 * @return int Retorna o total de registros existentes em agenda.dat
+	 * @throws IOException Se o arquivo de dados ainda não está aberto
+	 */
 	
 	// retorna a quantidade de registros do arquivo
 	public int quantidadeRegistros() throws IOException {

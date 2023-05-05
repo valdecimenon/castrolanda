@@ -1,5 +1,10 @@
 package com.softgraf.agenda.model;
 
+/**
+ * <strong>Este é o java bean principal do sistema</strong>
+ * @author Valdeci Menon
+ */
+
 // java bean
 public class Contato {
 
@@ -7,10 +12,21 @@ public class Contato {
 	private String nome; // 40 byts
 	private String fone; // 20 bytes => 64 bytes
 
+	/**
+	 * Construtor padrão para inicialização do bean
+	 */
+	
 	// construtor padrão para inicialização
 	public Contato() {
 		this(1, "", "");
 	}
+	
+	/**
+	 * Construtor com 3 parâmetros:
+	 * @param id Corresponde a uma chave primária
+	 * @param nome Nome completo do contato
+	 * @param fone Telefone com DDD
+	 */
 
 	// construtor de 3 parâmetros
 	public Contato(int id, String nome, String fone) {

@@ -1,0 +1,11 @@
+Tentativa de sacar R$ 0,00
+Tentativa de saque negativo
+Professor Tue May 09 20:30:45 BRT 2023 Tentativa de saque negativo
+Professor Tue May 09 20:32:34 BRT 2023 Tentativa de saque negativo
+excecoes.SaqueNegativoException: Tentativa de saque negativo
+	at aula11/excecoes.Conta.sacar(Conta.java:31)
+	at aula11/excecoes.TesteConta.main(TesteConta.java:38)
+excecoes.SaqueNegativoException: Tentativa de saque negativo
+	at aula11/excecoes.Conta.sacar(Conta.java:31)
+	at aula11/excecoes.TesteConta.main(TesteConta.java:38)
+Professor Tue May 09 20:32:54 BRT 2023 Tentativa de saque negativo

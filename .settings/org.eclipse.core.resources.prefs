@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/com/softgraf/agenda/dao/Metadados.java=ISO-8859-1
 encoding//src/testes/TesteConexao.java=ISO-8859-1
 encoding//src/testes/TesteDao.java=ISO-8859-1
 encoding/<project>=UTF-8

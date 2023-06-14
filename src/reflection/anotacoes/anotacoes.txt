@@ -1,0 +1,26 @@
+Criação de anotações personalizadas:
+ 
+ @Target(ElementType.xxx): indica o contexto onde a anotação poderá ser aplicada.
+   	- TYPE: classe, interface ou enum
+ 	- FIELD: variáveis de instância
+ 	- METHOD: métodos
+ 	- CONSTRUCTOR: construtor
+ 	- LOCAL_VARIABLE: variável local
+ 	- PARAMETER: parâmetro
+ 	- ANNOTATION_TYPE: anotação
+ 	- PACKAGE: pacote
+ 	
+Podemos usar múltiplos contextos
+@Target({ElementType.METHOD, ElementType.FIELD})
+
+@Retention(RetentionPolicy.xxx): especifica o nível em que a anotação estará disponível.
+	- SOURCE: Refere-se ao código fonte, descartada durante a compilação. 
+	          Então não estará disponível na classe compilada.
+	- CLASS: Refere-se ao arquivo .class, disponível ao compilador java, mas não à JVM.
+			 Será incluído no arquivo de classe.
+	- RUNTIME: Refere-se ao tempo de execução, disponível ao compilador java e à JVM. 
+
+
+@Inherited
+Por padrão, anotações não são herdadas para subclasses. 
+A anotação @Inherited marca a notação para ser herdada pela subclasse.

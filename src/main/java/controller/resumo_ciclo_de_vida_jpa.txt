@@ -1,0 +1,30 @@
+
+
+1. Estado NEW para MANAGED
+   Usar persist(), merge()
+   
+2. Estado MANAGED para DETACHED
+   Usar detached(), clear(), close()
+   
+3. Estado DETACHED para MANAGED
+   Usar merge(), persist()
+   
+4. Estado MANAGED para REMOVED
+   Usar remove()
+   
+5. Estado REMOVED para MANAGED
+   Usar persist()
+   
+6. Estado MANAGED para  BANCO de DADOS - sincronização
+   Usar commit(), flush()
+   
+7. Do BANCO de DADOS para MANAGED
+   Usar find(), query()
+   
+   
+   RESUMO DOS MÉTODOS OPOSTOS:
+   detach() <----> merge()
+   persist() <---> remove()
+   commit() <--> find(), query()
+   
+     

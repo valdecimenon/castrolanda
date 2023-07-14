@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -20,7 +21,7 @@ public class Pedido implements Serializable {
 	private Integer id;
 	
 	// um cliente pode ter muitos pedidos
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Cliente cliente;
 	
 	private LocalDate data;

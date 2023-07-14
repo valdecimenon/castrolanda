@@ -3,12 +3,13 @@ package join;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
-
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+
 
 @Entity
 public class Cliente implements Serializable {
@@ -22,7 +23,7 @@ public class Cliente implements Serializable {
 	@Column(length = 60)
 	private String nome;
 	
-	@OneToMany(mappedBy = "cliente")
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.PERSIST)
 	private List<Pedido> pedidos;
 
 	// construtor padrão

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cadastra Candidato</title>
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<div class="container col-3 mt-4">
+		
+		<h2>Candidato</h2>
+		
+		<form action="cadastrar" method="post" class="form-group mt-3">
+			
+			<div class="form-group mt-3">
+				<label>Nome</label>
+				<input type="text" name="nome" class="form-control" required>
+			</div>
+			
+			<div class="form-group mt-3">
+				<label>Sobrenome</label>
+				<input type="text" name="sobrenome" class="form-control" required>
+			</div>
+			
+			<label class="mt-4 mb-2">Sexo</label>
+			
+			<div class="btn-group">
+				<input type="radio"  class="btn-check" name="radioSexo" id="radioMasc" value="MASCULINO" checked>
+				<label class="btn btn-outline-secondary" for="radioMasc">Masculino</label>
+				
+				<input type="radio"  class="btn-check" name="radioSexo" id="radioFem" value="FEMININO" checked>
+				<label class="btn btn-outline-secondary" for="radioFem">Feminino</label>
+			</div>
+			
+			<br>
+			<label class="mt-4 mb-2">Onde você mora?</label><br>
+			
+			<div class="btn-group">
+				
+				<input type="radio" class="btn-check" name="radioCidade" id="radioCuritiba" value="Curitiba">
+				<label class="btn btn-outline-secondary" for="radioCuritiba">Curitiba</label>
+				
+				<input type="radio" class="btn-check" name="radioCidade" id="radioPg" value="Ponta Grossa" checked>
+				<label class="btn btn-outline-secondary" for="radioPg">Ponta Grossa</label>
+				
+				<input type="radio" class="btn-check" name="radioCidade" id="radioCastro" value="Castro">
+				<label class="btn btn-outline-secondary" for="radioCastro">Castro</label>				
+			</div>
+			
+			<br>
+			<label class="mt-4 mb-2">Linguagens de Programação</label><br>
+			
+			<div class="btn-group">
+				
+				<input type="checkbox" class="btn-check" name="checkJava" id="check1">
+				<label class="btn btn-outline-secondary" for="check1">Java</label>
+				
+				<input type="checkbox" class="btn-check" name="checkJavascript" id="check2">
+				<label class="btn btn-outline-secondary" for="check2">Javascript</label>
+				
+				<input type="checkbox" class="btn-check" name="checkPython" id="check3">
+				<label class="btn btn-outline-secondary" for="check3">Python</label>
+				
+			</div>
+			
+			<br>
+			<button type="submit" class="btn btn-primary mt-4">Enviar</button>
+			<button type="reset" class="btn btn-primary mt-4">Limpar</button>
+			
+		</form>
+		
+	</div>
+
+</body>
+
+</html>

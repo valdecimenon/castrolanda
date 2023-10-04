@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template.xhtml"
+				xmlns:h="http://xmlns.jcp.org/jsf/html"
+				xmlns:f="http://xmlns.jcp.org/jsf/core"
+				xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui"
+				xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+				
+	<ui:define name="titulo">Consulta Livros</ui:define>	
+
+	<ui:define name="conteudo">
+		
+		<h:form>
+			
+			<p:dataTable id="consulta" value="#{bean.livros}" var="livro" rows="5" 
+					     paginator="true" paginatorPosition="bottom" resizableColumns="true">
+			
+				<f:facet name="header">Livros Cadastrados</f:facet>
+				
+				<p:column style="width: 5px">
+					<f:facet name="header">ID</f:facet>
+					<h:outputText value="#{livro.id}"/>				
+				</p:column>
+			
+				<p:column style="width: 45px">
+					<f:facet name="header">Título do Livro</f:facet>
+					<h:outputText value="#{livro.titulo}"/>				
+				</p:column>
+			
+				<p:column style="width: 45px">
+					<f:facet name="header">Editora</f:facet>
+					<h:outputText value="#{livro.editora.nome}"/>				
+				</p:column>
+			
+				<p:column style="width: 70px">
+					<f:facet name="header">Ação</f:facet>
+					
+					<p:button value="Editar" icon="pi pi-file-word" style="margin-right: 10px" outcome="cadastraLivro">
+						<f:param name="id" value="#{livro.id}"/>
+					</p:button>
+					
+					<p:commandButton value="Excluir" icon="pi pi-eraser" styleClass="ui-button-warning"
+					                 action="#{bean.excluirLivro}" process="@this" update="@form">
+						<f:setPropertyActionListener value="#{livro.id}" target="#{bean.livroId}"/>
+					</p:commandButton>				
+				</p:column>
+			
+			</p:dataTable>
+			
+		</h:form>
+		
+	</ui:define>
+				
+</ui:composition>

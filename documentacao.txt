@@ -1,0 +1,53 @@
+ 1. Configuração dos Beans através de Estereótipos (Stereotypes):
+ 
+ @Component - usado em beans simples do tipo POJO: classe com attributos + getters e setters (java beans)
+ @Repository - usado em beans que implementam acesso ao banco de dados, através do Spring Data
+ @Service - beans que implementam regras de negócio. Aqui podemos instanciar os beans acima.
+ @Controller - beans responsáveis por receber todas as requisições do usuários, seus métodos são chamados de Actions.
+ 			   também implementa os métodos HTTP (get, post, delete). Dentro do Controller podemos instanciar qualquer bean acima.
+ 			   
+ 
+ 2. Ciclo de vida de um Bean
+ 	Configuramos o ciclo de vida através da anotação @Scope("tipo")
+ 	Tipos:
+ 	- Singleton (padrão): o container do Spring cria uma única instância do bean que será usado em todas as solicitações.
+ 	- Prototype: várias instâncias, uma para cada solicitação.
+ 	- Request: várias instâncias, uma para cada requisição.
+ 	- Session: uma única enquanto durar a sessão.
+ 	- Application: similiar ao Singleton, porém será compartilhada entre várias aplicações.
+ 	- Websocket: similar ao Singleton, porém limitado a uma sessão do WebSocket.
+ 	
+ 	
+ 3. Anotações principais do Spring
+    @Bean - anotação usada sobre um método que retorna um bean para ser usado como dependência de outras classes do projeto.
+    
+    @EnableJpaRepositories(basePackages="com.softgraf.primavera.data.repository") - diz ao spring onde está o pacote com beans @Repository
+    
+    @Autowired - injeta um bean   
+    private ProdutoRepository repositorioProduto;
+    
+    @RestController - é o mesmo que usar as anotações @Controller e @ResponseBody
+    
+    @ResponseBody - informa ao controlador que o objeto retornado será automaticamente serializado em formato JSON e devolvido
+                    como HttpResponse
+                    
+    @ControllerAdvice - anotação usada em uma classe que personaliza Exception que será compartilhada entre todos os controles
+    
+    @Configuration - define que uma classe é uma fonte de definições de Bean.
+    
+    @EnableAutoConfiguration - permite que o Spring automaticamente configure o contexto da aplicação
+    
+    @ComponentScan - se tivermos um pacote que não está em dentro do pacote principal, podemos informar usando esta anotação
+    				 junto com @Configuration
+    Exemplo:
+    	pakage br.com.dominio.pacoteprincipal
+    	@Configuration
+    	@ComponentScan(basePackages="br.com.dominio.outopacote")
+    	public class MinhaClasseDeConfiguracaoExplicita {
+    	
+    	}
+    	
+    @SpringBootApplication - equivalente as anotações: @Configuration, @EnableAutoConfiguration e @ComponentScan
+       
+ 	
+ 	
